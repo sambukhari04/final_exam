@@ -1,0 +1,7 @@
+<%= simple_form_for @auction do |form| %>
+  <%= form.input :title, label: 'Title' %>
+  <%= form.input :details %>
+  <%= form.input :end_date, label: 'Ends On' %>
+  <%= form.input :price, label: 'Reserve Price' %>
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>
