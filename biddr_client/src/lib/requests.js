@@ -12,12 +12,12 @@ export const Auction = {
    ).then(res => res.json());
  },
 
-   get (id) {
-     return fetch(
-       `${BASE_URL}/api/v1/auctions/${id}`,
+  get (id) {
+    return fetch(
+    `${BASE_URL}/api/v1/auctions/${id}`,
        {
          headers: {api_key: API_KEY}
        }
-     ).then(res => res.json());
-    }
+    ).then(res => res.json());
+  }
 }

@@ -1,5 +1,5 @@
 class AuctionSerializer < ActiveModel::Serializer
-  attributes :id, :title, :created_at
+  attributes :id, :title, :created_at, :details, :end_date, :price
   has_many :bids
   def created_at
     object.created_at.strftime('%Y-%B-%d')

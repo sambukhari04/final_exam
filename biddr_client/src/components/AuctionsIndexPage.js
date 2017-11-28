@@ -14,7 +14,7 @@ import {Auction} from '../lib/requests';
    componentDidMount () {
      Auction
        .getAll()
-       .then(data => { this.setState({auctions: data.auction}); })
+       .then(data => { this.setState({auctions: data}); })
    }
 
    render () {

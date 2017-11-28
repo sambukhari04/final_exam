@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :auctions
+  # resources :auctions
 
   # resource :session, only: [:new, :create, :destroy]
   # resources :users, only: [:new, :create]
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :auctions, only: [:index, :show, :create, :update, :destroy] do
         resources :bids, shallow: true, only: [:create, :destroy]
       end
+      resources :tokens, only: [:create]
     end
   end
   root 'home#index'

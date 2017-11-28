@@ -1,5 +1,5 @@
 class Api::V1::AuctionsController < Api::BaseController
-  protect_from_forgery with: :null_session
+  # protect_from_forgery with: :null_session
   # before_action :authenticate_api_user
 
   def index
@@ -22,15 +22,11 @@ class Api::V1::AuctionsController < Api::BaseController
     end
   end
 
-  def index
-    @auctions = Auction.order(created_at: :desc)
-  end
-
   def update
     if @auction.update auction_params
-      redirect_to @auction
+      render json: @auction
     else
-      render :edit
+      render :json
     end
   end
 
